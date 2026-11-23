@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>AI & Tech Network Offer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: single wide column sales offer — hook, process, pack grid, filterable catalogue */
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --ink:#121831; --muted:#5B6280; --line:#DFE2EC;
+  --accent:#2B4EFF; --accent-soft:#E7ECFF; --gold:#B7791F; --gold-soft:#FBF1DE;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1222; --surface:#161B30; --ink:#ECEFFA; --muted:#9AA1BF; --line:#2A3150;
+  --accent:#7D93FF; --accent-soft:#1E2750; --gold:#E9B25A; --gold-soft:#3A2D16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1222; --surface:#161B30; --ink:#ECEFFA; --muted:#9AA1BF; --line:#2A3150;
+  --accent:#7D93FF; --accent-soft:#1E2750; --gold:#E9B25A; --gold-soft:#3A2D16; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto;padding-block:48px 72px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6vw,60px);font-weight:800;line-height:1.02}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:700}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted);max-width:62ch}
+.num{font-variant-numeric:tabular-nums}
+/* hero */
+.hero{display:grid;gap:28px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.stat{padding:18px 20px 18px 0;display:flex;flex-direction:column;gap:2px}
+.stat .v{font-family:var(--display);font-size:34px;font-weight:800}
+.stat .l{font-size:13px;color:var(--muted)}
+/* section heads */
+.shead{display:flex;flex-direction:column;gap:10px;max-width:70ch}
+section{display:flex;flex-direction:column;gap:28px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.step{display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid var(--line)}
+.step .k{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.step p{color:var(--muted);font-size:14px}
+/* packs */
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;align-items:start}
+.pricebox{display:flex;flex-direction:column;gap:6px}
+.was{font-size:13px;opacity:.75}
+.incl{font-size:13px;margin-top:10px;font-weight:600}
+.pack.full .tag.best{background:var(--gold);color:var(--ink)}
+.pack{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.pack.full{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pack.full .pdesc,.pack.full .kv dt,.pack.full summary{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.pack.full .tag{background:var(--accent);color:#fff}
+.ptop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.tag.best{background:var(--gold-soft);color:var(--gold)}
+.pdesc{color:var(--muted);font-size:14px}
+.price{font-family:var(--display);font-size:36px;font-weight:800;line-height:1}
+.price small{font-family:var(--body);font-size:13px;font-weight:500;opacity:.7;margin-left:4px}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0}
+.kv div{display:flex;flex-direction:column}
+.kv dt{font-size:12px;color:var(--muted)}
+.kv dd{margin:0;font-family:var(--mono);font-weight:600;font-size:14px}
+details summary{cursor:pointer;font-size:13px;color:var(--muted)}
+details summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.plist{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.plist span{font-family:var(--mono);font-size:12px;padding:3px 7px;border:1px solid currentColor;border-radius:6px;opacity:.8}
+.plist{max-height:220px;overflow:auto}
+/* catalogue */
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tools input,.tools select{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink)}
+.tools input{flex:1 1 220px;min-width:0}
+.tools input:focus-visible,.tools select:focus-visible,th button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.count{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--surface)}
+th button{all:unset;cursor:pointer}
+th button[aria-sort]::after{content:" ↕";opacity:.4}
+th button[aria-sort="ascending"]::after{content:" ↑";opacity:1}
+th button[aria-sort="descending"]::after{content:" ↓";opacity:1}
+td.r,th.r{text-align:right}
+td.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+td .nm{font-weight:600}
+td .sub{display:block;font-size:12px;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.zone{font-size:11px;font-family:var(--mono);padding:2px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.dur{color:var(--gold);font-weight:600}
+.vol{color:var(--accent);font-weight:600}
+/* conditions */
+.cond{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px}
+.cond div{display:flex;flex-direction:column;gap:4px;padding-block:12px;border-top:1px solid var(--line)}
+.cond b{font-weight:600}
+.cond span{color:var(--muted);font-size:14px}
+.closing{background:var(--accent-soft);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.closing p{max-width:65ch}
+.ph{background:var(--gold-soft);color:var(--gold);padding:0 4px;border-radius:4px}
+@media (prefers-reduced-motion:no-preference){.pack{transition:transform .2s ease}.pack:hover{transform:translateY(-2px)}}
+@media (max-width:520px){.kv{grid-template-columns:1fr 1fr}.price{font-size:30px}.closing{padding:22px}}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Instagram campaign offer</span>
+    <h1>Put your brand in front of 103 AI &amp; Tech pages</h1>
+    <p class="lead">A network of Instagram pages focused on artificial intelligence, technology and popular science. Each page creates its own video (Reel) or carousel about your product, in its own style, for its own audience. Pick a ready-made pack or choose pages one by one.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section>
+    <div class="shead"><span class="eyebrow">Process</span><h2>How the campaign works</h2></div>
+    <div class="steps">
+      <div class="step"><span class="k">Step 1</span><h3>Brief</h3><p>You send us the product, key message, link and visual assets.</p></div>
+      <div class="step"><span class="k">Step 2</span><h3>Creation</h3><p>Each page produces its Reel or carousel in the tone that works for its followers.</p></div>
+      <div class="step"><span class="k">Step 3</span><h3>Approval</h3><p>You approve every piece of content before it goes live. One round of feedback is included.</p></div>
+      <div class="step"><span class="k">Step 4</span><h3>Posting &amp; report</h3><p>Content goes live on the agreed dates, followed by a report with views, likes, shares and clicks.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="eyebrow">Packs</span><h2>Four packs, up to 25% off</h2><p class="lead">Each pack includes every page from the one before it, plus new ones. The bigger the pack, the bigger the discount and the less you pay per follower reached. One post per page, with coordination and a campaign report included.</p></div>
+    <div class="packs" id="packs"></div>
+  </section>
+
+  <section>
+    <div class="shead"><span class="eyebrow">À la carte</span><h2>Build your campaign page by page</h2><p class="lead">All prices are per post. The volume rate applies from 10 posts bought on the same page.</p></div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="Search a page…" aria-label="Search a page">
+      <select id="zone" aria-label="Filter by audience"><option value="">All audiences</option><option value="English">English-speaking</option><option value="India">India</option><option value="Spanish">Spanish-speaking</option><option value="Portuguese">Portuguese-speaking</option><option value="Mixed">Mixed</option></select>
+      <select id="size" aria-label="Filter by size"><option value="">All sizes</option><option value="1000000">Over 1M followers</option><option value="300000">300K to 1M</option><option value="100000">100K to 300K</option><option value="0">Under 100K</option></select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr>
+          <th><button data-k="n">Page</button></th>
+          <th class="r"><button data-k="f" aria-sort="descending">Followers</button></th>
+          <th>Top audience</th>
+          <th>Male</th>
+          <th>Age</th>
+          <th class="r"><button data-k="p">Price / post</button></th>
+          <th class="r"><button data-k="p10">From 10 posts</button></th>
+          <th>Duration</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+
+</div>
+
+<script>
+const DATA = {"pages":[{"n":"HyperTech","f":1200000,"c":"US 31.6% · India 19%","z":"English","g":"64%","a":"25-34, 35-44","p":2950,"p10":1180,"d":"Permanent","fmt":"","alt":[]},{"n":"Techskills","f":1400000,"c":"US 44.9% · India 6.7%","z":"English","g":"56%","a":"25-34, 35-44","p":3540,"p10":1420,"d":"Permanent","fmt":"","alt":[]},{"n":"Theaipage","f":581000,"c":"US 27.4% · India 14.3%","z":"English","g":"80%","a":"25-34, 35-44","p":1180,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Weposttech","f":1000000,"c":"US 21.3% · India 11.3%","z":"English","g":"69%","a":"25-34, 35-44","p":1890,"p10":1180,"d":"Permanent","fmt":"","alt":[]},{"n":"Chagnesintech","f":824000,"c":"US 22.7% · India 5.4%","z":"English","g":"38%","a":"25-34, 35-44","p":1420,"p10":1180,"d":"Permanent","fmt":"","alt":[]},{"n":"InfuseWithAi","f":62600,"c":"US 27.8% · UK 13%","z":"English","g":"89%","a":"25-34, 18-24","p":590,"p10":540,"d":"Permanent","fmt":"","alt":[]},{"n":"DeepNewsAi","f":938000,"c":"India 14.2% · Brazil 9.5%","z":"India","g":"80%","a":"25-34, 18-24","p":1420,"p10":1420,"d":"Permanent","fmt":"","alt":[]},{"n":"Unfoldedai","f":445000,"c":"India 27.8% · US 11.6%","z":"India","g":"80%","a":"25-34, 18-24","p":950,"p10":890,"d":"Permanent","fmt":"","alt":[]},{"n":"Timetolearn.ai","f":76000,"c":"US 81.3% · India 2.3%","z":"English","g":"21%","a":"18-24, 25-34","p":320,"p10":320,"d":"Permanent","fmt":"","alt":[]},{"n":"Iagptc","f":12800,"c":"Argentina 16.9% · Mexico 14.7%","z":"Spanish","g":"70%","a":"35-44, 25-34","p":120,"p10":120,"d":"Permanent","fmt":"","alt":[]},{"n":"Futuretechnews.ai","f":102000,"c":"US 30.1% · India 9.9%","z":"English","g":"84%","a":"18-24, 25-34","p":380,"p10":380,"d":"Permanent","fmt":"","alt":[]},{"n":"AIWealthSociety","f":109000,"c":"India 21.3% · US 12.6%","z":"India","g":"80%","a":"25-34, 35-44","p":120,"p10":120,"d":"Permanent","fmt":"","alt":[]},{"n":"Uncoveringaitech","f":120000,"c":"US 10.5% · Brazil 8.2%","z":"English","g":"82%","a":"25-34, 35-44","p":380,"p10":380,"d":"Permanent","fmt":"","alt":[]},{"n":"inventos","f":862000,"c":"Mexico 19.9% · Spain 15.2%","z":"Spanish","g":"69%","a":"25-34, 18-24","p":1420,"p10":1300,"d":"Permanent","fmt":"","alt":[]},{"n":"ia.hub","f":247000,"c":"Mexico 25.3% · Argentina 15.2%","z":"Spanish","g":"66%","a":"25-34, 18-24","p":570,"p10":570,"d":"Permanent","fmt":"","alt":[]},{"n":"Lazona.Biz","f":318000,"c":"Argentina 16.1% · Mexico 13.1%","z":"Spanish","g":"76%","a":"25-34, 35-44","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Finanspace_","f":518000,"c":"Mexico 22.5% · Colombia 13.3%","z":"Spanish","g":"71%","a":"35-44, 25-34","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"ArtificialIntelligenceFacts","f":137000,"c":"US 42.8% · US 7%","z":"English","g":"78%","a":"25-34, 18-24","p":560,"p10":540,"d":"Permanent","fmt":"","alt":[]},{"n":"Infinitemindsai","f":209000,"c":"US 18.7% · India 15.8%","z":"English","g":"77%","a":"25-34, 35-44","p":420,"p10":420,"d":"Permanent","fmt":"","alt":[]},{"n":"Theainewsfield","f":168000,"c":"US 58.1% · India 10.4%","z":"English","g":"64%","a":"25-34, 35-44","p":410,"p10":410,"d":"Permanent","fmt":"","alt":[]},{"n":"Tricksforai","f":166000,"c":"India 57.2% · US 5.3%","z":"India","g":"87%","a":"25-34, 18-24","p":150,"p10":150,"d":"Permanent","fmt":"","alt":[]},{"n":"Whtelist","f":167000,"c":"US 32.3% · Pakistan 11.8%","z":"English","g":"84%","a":"25-34, 18-24","p":1420,"p10":1420,"d":"Permanent","fmt":"","alt":[]},{"n":"Matrixes","f":374000,"c":"US 49.6% · India 7.6%","z":"English","g":"78%","a":"18-24, 25-34","p":1420,"p10":1420,"d":"Permanent","fmt":"","alt":[]},{"n":"Deepen.ai","f":229000,"c":"India 25.1% · US 6.9%","z":"India","g":"88%","a":"25-34, 35-44","p":540,"p10":540,"d":"Permanent","fmt":"","alt":[]},{"n":"Stics.ai","f":290000,"c":"India 32% · US 18.6%","z":"India","g":"73%","a":"25-34, 35-44","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Theainewsgroup","f":240000,"c":"US 44.8% · India 10.5%","z":"English","g":"65%","a":"25-34, 35-44","p":520,"p10":520,"d":"Permanent","fmt":"","alt":[]},{"n":"Artificialintelligencetrickss","f":370000,"c":"US 30.5% · India 13.9%","z":"English","g":"42%","a":"18-24, 25-34","p":800,"p10":800,"d":"Permanent","fmt":"","alt":[]},{"n":"Theaifield","f":598000,"c":"US 24.3% · India 14.8%","z":"English","g":"79%","a":"25-34, 35-44","p":2010,"p10":2010,"d":"Permanent","fmt":"","alt":[]},{"n":"AIProfitNews","f":2600000,"c":"US 36.9% · India 22.6%","z":"English","g":"75%","a":"25-34, 35-44","p":2360,"p10":2360,"d":"Permanent","fmt":"","alt":[]},{"n":"Ai.sources","f":213000,"c":"US 51.5% · India 8.5%","z":"English","g":"93%","a":"25-34, 35-44","p":540,"p10":540,"d":"Permanent","fmt":"","alt":[]},{"n":"AiCouncillor","f":130000,"c":"US 35.4% · India 9.8%","z":"English","g":"63%","a":"35-44, 25-34","p":950,"p10":950,"d":"Permanent","fmt":"","alt":[]},{"n":"TechCouncillor","f":51400,"c":"US 28.2% · India 19.2%","z":"English","g":"92%","a":"25-34, 35-44","p":950,"p10":950,"d":"Permanent","fmt":"","alt":[]},{"n":"Alpacka.ai","f":141000,"c":"Mexico 19.9% · Argentina 15.5%","z":"Spanish","g":"82%","a":"25-34, 18-24","p":180,"p10":180,"d":"Permanent","fmt":"","alt":[]},{"n":"Askgpts","f":114000,"c":"India 44.5% · US 10.1%","z":"India","g":"88%","a":"25-34, 18-24","p":170,"p10":170,"d":"Permanent","fmt":"","alt":[]},{"n":"Blunerds","f":54300,"c":"India 26.2% · US 6.3%","z":"India","g":"96%","a":"25-34, 18-24","p":160,"p10":160,"d":"Permanent","fmt":"","alt":[]},{"n":"Brun0GPT","f":208000,"c":"Brazil 27.8% · Portugal 13%","z":"Portuguese","g":"68%","a":"25-34, 35-44","p":570,"p10":570,"d":"Permanent","fmt":"","alt":[]},{"n":"Codehub_tech","f":34500,"c":"India 42.2% · US 4.7%","z":"India","g":"83%","a":"25-34, 18-24","p":190,"p10":190,"d":"Permanent","fmt":"","alt":[]},{"n":"Coders_Section","f":152000,"c":"India 48% · Indonesia 11.7%","z":"India","g":"64%","a":"18-24, 25-34","p":590,"p10":590,"d":"Permanent","fmt":"","alt":[]},{"n":"Coding_Cosmos","f":107000,"c":"India 32% · US 15%","z":"India","g":"85%","a":"25-34, 18-24","p":890,"p10":890,"d":"Permanent","fmt":"","alt":[]},{"n":"Datasciencebrain","f":471000,"c":"India 70.8% · US 6.8%","z":"India","g":"78%","a":"18-24, 25-34","p":370,"p10":370,"d":"Permanent","fmt":"","alt":[]},{"n":"Earningtip.ai","f":376000,"c":"US 39.2% · India 16.5%","z":"English","g":"67%","a":"25-34, 35-44","p":540,"p10":540,"d":"Permanent","fmt":"","alt":[]},{"n":"Futurewalt.ai","f":246000,"c":"India 45.6% · US 7.8%","z":"India","g":"78%","a":"25-34, 18-24","p":1480,"p10":1480,"d":"Permanent","fmt":"","alt":[]},{"n":"Futuremint.ai","f":21900,"c":"India 67.7% · US 6.7%","z":"India","g":"91%","a":"25-34, 35-44","p":1360,"p10":1360,"d":"Permanent","fmt":"","alt":[]},{"n":"Geekydev.in","f":480000,"c":"India 69.8% · US 6.5%","z":"India","g":"73%","a":"25-34, 18-24","p":1270,"p10":1270,"d":"Permanent","fmt":"","alt":[]},{"n":"Gen3rative","f":79000,"c":"US 28.9% · UK 6.3%","z":"English","g":"57%","a":"25-34, 35-44","p":240,"p10":240,"d":"Permanent","fmt":"","alt":[]},{"n":"pycode.hubb","f":675000,"c":"India 50.6% · US 3.2%","z":"India","g":"82%","a":"18-24, 25-34","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Python.coder_","f":1100000,"c":"","z":"Mixed","g":"","a":"","p":1070,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"Python.science","f":408000,"c":"India 46.7% · US 34.2%","z":"India","g":"85%","a":"25-34, 18-24","p":770,"p10":770,"d":"Permanent","fmt":"","alt":[]},{"n":"Sanskaar.ai","f":341000,"c":"India 43.6% · US 36.2%","z":"India","g":"83%","a":"25-34, 18-24","p":1010,"p10":1010,"d":"Permanent","fmt":"","alt":[]},{"n":"Spacexpage","f":1200000,"c":"US 24% · India 9.4%","z":"English","g":"82%","a":"25-34, 35-44","p":890,"p10":890,"d":"Permanent","fmt":"","alt":[]},{"n":"Sovereignty.ai","f":219000,"c":"US 25.4% · India 20%","z":"English","g":"78%","a":"25-34, 35-44","p":340,"p10":340,"d":"Permanent","fmt":"","alt":[]},{"n":"stics.bot","f":16400,"c":"Mexico 30.6% · Argentina 18.8%","z":"Spanish","g":"80%","a":"35-44, 25-34","p":180,"p10":180,"d":"Permanent","fmt":"","alt":[]},{"n":"stics.ia","f":52900,"c":"Mexico 30.6% · Argentina 18.8%","z":"Spanish","g":"80%","a":"35-44, 25-34","p":220,"p10":220,"d":"Permanent","fmt":"","alt":[]},{"n":"stics.qc","f":8000,"c":"US 23.1% · India 9%","z":"English","g":"85%","a":"35-44, 25-34","p":170,"p10":170,"d":"Permanent","fmt":"","alt":[]},{"n":"TecTalks.io","f":127000,"c":"US 38.9% · India 11%","z":"English","g":"66%","a":"25-34, 18-24","p":590,"p10":590,"d":"Permanent","fmt":"","alt":[]},{"n":"Thesanskaarsingh","f":1300000,"c":"India 46.4% · US 32.6%","z":"India","g":"79%","a":"25-34, 18-24","p":1600,"p10":1600,"d":"Permanent","fmt":"","alt":[]},{"n":"Yajurved.ai","f":622000,"c":"India 42.4% · India 13.6%","z":"India","g":"48%","a":"25-34, 18-24","p":770,"p10":770,"d":"Permanent","fmt":"","alt":[]},{"n":"Activeprogrammer","f":656000,"c":"US 34.3% · India 18.1%","z":"English","g":"82%","a":"25-34, 18-24","p":710,"p10":710,"d":"Permanent","fmt":"","alt":[]},{"n":"Techin24hours","f":537000,"c":"India 25.2% · US 17.4%","z":"India","g":"91%","a":"25-34, 18-24","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Youraicompass","f":457000,"c":"US 32% · India 20.1%","z":"English","g":"47%","a":"35-44, 45-54","p":770,"p10":770,"d":"Permanent","fmt":"","alt":[]},{"n":"CatAiPortal","f":375000,"c":"Brazil 85.9% · Portugal 2.9%","z":"Portuguese","g":"50%","a":"25-34, 18-24","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Inventastic","f":376000,"c":"US 28.1% · India 10.3%","z":"English","g":"62%","a":"25-34, 18-24","p":470,"p10":470,"d":"Permanent","fmt":"","alt":[]},{"n":"Artificialintelligence.hub","f":365000,"c":"US 27.3% · India 11.4%","z":"English","g":"83%","a":"25-34, 35-44","p":710,"p10":710,"d":"Permanent","fmt":"","alt":[]},{"n":"Learnaifaster","f":53400,"c":"India 29.2% · India 14.6%","z":"India","g":"86%","a":"25-34, 35-44","p":650,"p10":650,"d":"Permanent","fmt":"Carousel","alt":[{"fmt":"Reel","price":890}]},{"n":"Furiouslytech","f":80300,"c":"India 40.8% · US 9%","z":"India","g":"82%","a":"25-34, 18-24","p":360,"p10":360,"d":"Permanent","fmt":"","alt":[]},{"n":"Techomg","f":1500000,"c":"US 31.2% · UK 7.2%","z":"English","g":"44%","a":"35-44, 25-34","p":590,"p10":590,"d":"Permanent","fmt":"","alt":[]},{"n":"Techniiverse","f":945000,"c":"","z":"Mixed","g":"","a":"","p":360,"p10":360,"d":"Permanent","fmt":"","alt":[]},{"n":"Explainscience.ai","f":761000,"c":"India 27.2% · US 20.2%","z":"India","g":"61%","a":"25-34, 35-44","p":1480,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"Gotyourtech","f":2300000,"c":"US 28.9% · UK 6.3%","z":"English","g":"57%","a":"25-34, 35-44","p":770,"p10":770,"d":"Permanent","fmt":"","alt":[]},{"n":"Alphabiz.ai","f":19300,"c":"US 27.5% · Germany 7.4%","z":"English","g":"31%","a":"25-34, 35-44","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"vision.motivee","f":1100000,"c":"US 34.7% · India 16.7%","z":"English","g":"79%","a":"25-34, 35-44","p":1070,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"Centerofai","f":9000,"c":"US 34.% · Uk 5.2%","z":"English","g":"80%","a":"25-34, 35-44","p":100,"p10":100,"d":"Permanent","fmt":"","alt":[]},{"n":"Whereyoulearnai","f":38700,"c":"US 24.9% · Brazil 5.7%","z":"English","g":"74%","a":"25-34, 35-44","p":100,"p10":100,"d":"Permanent","fmt":"","alt":[]},{"n":"Business.ai","f":120000,"c":"US 24.9% · India 19%","z":"English","g":"70%","a":"25-34, 35-44","p":650,"p10":650,"d":"Permanent","fmt":"","alt":[]},{"n":"Explainedlearn","f":1800000,"c":"US 14.3% · Brazil 6.7%","z":"English","g":"31%","a":"25-34, 35-44","p":830,"p10":830,"d":"Permanent","fmt":"","alt":[]},{"n":"Physicsuncovered","f":1100000,"c":"US 31.9% · India 11%","z":"English","g":"60%","a":"35-44, 25-34","p":1070,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"SpaceInANutShell","f":1800000,"c":"US 23.6% · India 13.1%","z":"English","g":"43%","a":"25-34, 35-44","p":890,"p10":890,"d":"Permanent","fmt":"","alt":[]},{"n":"Advancible","f":2300000,"c":"US 33.5% · India 16.2%","z":"English","g":"62%","a":"25-34, 18-24","p":1030,"p10":1030,"d":"Permanent","fmt":"","alt":[]},{"n":"Howeverythingworks","f":4100000,"c":"US 33.3% · India 13.1%","z":"English","g":"51%","a":"25-34, 18-24","p":2010,"p10":2010,"d":"Permanent","fmt":"","alt":[]},{"n":"Explainingworld","f":253000,"c":"US 23.1% · India 10.1%","z":"English","g":"76%","a":"18-24, 25-34","p":1300,"p10":1300,"d":"2 weeks","fmt":"","alt":[]},{"n":"Explainedfact","f":3600000,"c":"US 40.7% · India 13.9%","z":"English","g":"74%","a":"18-24, 25-34","p":1070,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"Unstoppable","f":1800000,"c":"US 34.5% · India 6.1%","z":"English","g":"88%","a":"25-34, 18-24","p":1540,"p10":1540,"d":"1 week","fmt":"","alt":[]},{"n":"Explainingnews","f":7400000,"c":"US 17.9% · India 9.5%","z":"English","g":"51%","a":"35-45, 25-34","p":3780,"p10":3780,"d":"Permanent","fmt":"","alt":[]},{"n":"This.our.planet","f":795000,"c":"US 28.6% · India 14.3%","z":"English","g":"56%","a":"25-34, 18-24","p":1300,"p10":1300,"d":"Permanent","fmt":"","alt":[]},{"n":"BeyondStartup.s","f":1000000,"c":"US 31.3% · India 6%","z":"English","g":"88%","a":"18-24, 25-34","p":840,"p10":840,"d":"Permanent","fmt":"","alt":[]},{"n":"Media","f":2700000,"c":"US 40.8% · UK 7.7%","z":"English","g":"42%","a":"18-24, 25-34","p":2950,"p10":2950,"d":"Permanent","fmt":"","alt":[]},{"n":"Markets","f":5600000,"c":"US 32.1% · India 5%","z":"English","g":"68%","a":"35-44, 25-34","p":3190,"p10":3190,"d":"Permanent","fmt":"","alt":[]},{"n":"ai.theshift","f":583000,"c":"India 46.5% · US 5.9%","z":"India","g":"83%","a":"25-34, 18-24","p":1070,"p10":1070,"d":"Permanent","fmt":"","alt":[]},{"n":"arising.ai","f":100000,"c":"India 34.1% · US 13.3%","z":"India","g":"90%","a":"25-34, 18-24","p":590,"p10":590,"d":"Permanent","fmt":"","alt":[]},{"n":"Scienceexplored","f":1200000,"c":"US 30.2% · India 12.2%","z":"English","g":"60%","a":"25-34, 35-44","p":590,"p10":590,"d":"Permanent","fmt":"","alt":[]},{"n":"hollyfield.ia","f":179000,"c":"Brazil 90.7% · Portugal 3.4%","z":"Portuguese","g":"79%","a":"25-34, 35-44","p":300,"p10":300,"d":"Permanent","fmt":"","alt":[]},{"n":"theaintelligence","f":58000,"c":"US 26.9% · India 12.7%","z":"English","g":"77%","a":"35-44, 25-34","p":240,"p10":240,"d":"Permanent","fmt":"","alt":[]},{"n":"Theartificialintelligence","f":1300000,"c":"US 23.8% · India 25.8%","z":"English","g":"83%","a":"25-34, 35-44","p":3540,"p10":3540,"d":"Permanent","fmt":"","alt":[]},{"n":"ai.extractions","f":226000,"c":"US 55.5% · Uk 8.8%","z":"English","g":"61%","a":"65+ 35-44","p":220,"p10":220,"d":"Permanent","fmt":"","alt":[]},{"n":"Deepvaultai","f":229000,"c":"US 30% · India 11.4%","z":"English","g":"89%","a":"35-44, 25-34","p":710,"p10":710,"d":"Permanent","fmt":"","alt":[]},{"n":"LawofTech","f":1200000,"c":"US 46.3% · India 3.6%","z":"English","g":"80%","a":"","p":950,"p10":950,"d":"Permanent","fmt":"","alt":[]},{"n":"Dominatingtech","f":3200000,"c":"US 58.4% · South Africa 4.8%","z":"English","g":"64%","a":"25-34, 35-44","p":2360,"p10":2360,"d":"Permanent","fmt":"","alt":[]},{"n":"Evolving.qc","f":409000,"c":"US 50% · UK 7.5%","z":"English","g":"55%","a":"35-44, 25-34","p":1770,"p10":1770,"d":"Permanent","fmt":"Reel","alt":[{"fmt":"Carousel","price":1010}]},{"n":"quantumfield.ai","f":222000,"c":"US 29.4% · India 12.4%","z":"English","g":"69%","a":"35-44, 45-54","p":2010,"p10":2010,"d":"Permanent","fmt":"","alt":[]},{"n":"GrowthForgeAi","f":61300,"c":"US 31.1% · India 16.8%","z":"English","g":"83%","a":"25-34, 35-44","p":1770,"p10":1770,"d":"Permanent","fmt":"Reel","alt":[{"fmt":"Carousel","price":1010}]},{"n":"mindgoals.ai","f":148000,"c":"US 33.4% · India 17.5%","z":"English","g":"44%","a":"35-44, 45-54","p":170,"p10":170,"d":"Permanent","fmt":"","alt":[]},{"n":"techstartup.ai","f":60900,"c":"US 33.4% · India 17.5%","z":"English","g":"44%","a":"35-44, 45-54","p":170,"p10":170,"d":"Permanent","fmt":"","alt":[]},{"n":"Aiemerges","f":154000,"c":"US 21.1% · India 11.1%","z":"English","g":"83%","a":"25-34, 35-44","p":890,"p10":890,"d":"Permanent","fmt":"","alt":[]}],"packs":[{"key":"starter","title":"Starter Pack","desc":"Five AI pages with a highly qualified, mostly US audience. A low-risk way to test the format.","pages":["Theaipage","Earningtip.ai","Artificialintelligence.hub","Theainewsgroup","Ai.sources"],"extra":["Theaipage","Earningtip.ai","Artificialintelligence.hub","Theainewsgroup","Ai.sources"],"prevTitle":null,"alacarte":3490,"price":2990,"discount":14,"reach":1775000},{"key":"croissance","title":"Growth Pack","desc":"Everything in the Starter Pack, plus eight tech pages, including Techskills and LawofTech with over one million followers each.","pages":["Theaipage","Earningtip.ai","Artificialintelligence.hub","Theainewsgroup","Ai.sources","Techskills","LawofTech","Spacexpage","Activeprogrammer","Youraicompass","Inventastic","Deepvaultai","Theainewsfield"],"extra":["Techskills","LawofTech","Spacexpage","Activeprogrammer","Youraicompass","Inventastic","Deepvaultai","Theainewsfield"],"prevTitle":"Starter Pack","alacarte":11940,"price":9990,"discount":16,"reach":7461000},{"key":"impact","title":"Impact Pack","desc":"Everything in the Growth Pack, plus the biggest tech and AI pages in the network. Built for product launches.","pages":["Theaipage","Earningtip.ai","Artificialintelligence.hub","Theainewsgroup","Ai.sources","Techskills","LawofTech","Spacexpage","Activeprogrammer","Youraicompass","Inventastic","Deepvaultai","Theainewsfield","Dominatingtech","AIProfitNews","HyperTech","Theartificialintelligence","Weposttech","Media","Gotyourtech","Techomg","Advancible","Theaifield","Matrixes","Chagnesintech","BeyondStartup.s","vision.motivee","Artificialintelligencetrickss","ai.extractions","TecTalks.io","Sovereignty.ai","Infinitemindsai"],"extra":["Dominatingtech","AIProfitNews","HyperTech","Theartificialintelligence","Weposttech","Media","Gotyourtech","Techomg","Advancible","Theaifield","Matrixes","Chagnesintech","BeyondStartup.s","vision.motivee","Artificialintelligencetrickss","ai.extractions","TecTalks.io","Sovereignty.ai","Infinitemindsai"],"prevTitle":"Growth Pack","alacarte":39510,"price":31900,"discount":19,"reach":30608000},{"key":"full","title":"Full Network","desc":"Everything in the Impact Pack, plus every other page: science, explainers, developer and international pages.","pages":["HyperTech","Techskills","Theaipage","Weposttech","Chagnesintech","InfuseWithAi","DeepNewsAi","Unfoldedai","Timetolearn.ai","Iagptc","Futuretechnews.ai","AIWealthSociety","Uncoveringaitech","inventos","ia.hub","Lazona.Biz","Finanspace_","ArtificialIntelligenceFacts","Infinitemindsai","Theainewsfield","Tricksforai","Whtelist","Matrixes","Deepen.ai","Stics.ai","Theainewsgroup","Artificialintelligencetrickss","Theaifield","AIProfitNews","Ai.sources","AiCouncillor","TechCouncillor","Alpacka.ai","Askgpts","Blunerds","Brun0GPT","Codehub_tech","Coders_Section","Coding_Cosmos","Datasciencebrain","Earningtip.ai","Futurewalt.ai","Futuremint.ai","Geekydev.in","Gen3rative","pycode.hubb","Python.coder_","Python.science","Sanskaar.ai","Spacexpage","Sovereignty.ai","stics.bot","stics.ia","stics.qc","TecTalks.io","Thesanskaarsingh","Yajurved.ai","Activeprogrammer","Techin24hours","Youraicompass","CatAiPortal","Inventastic","Artificialintelligence.hub","Learnaifaster","Furiouslytech","Techomg","Techniiverse","Explainscience.ai","Gotyourtech","Alphabiz.ai","vision.motivee","Centerofai","Whereyoulearnai","Business.ai","Explainedlearn","Physicsuncovered","SpaceInANutShell","Advancible","Howeverythingworks","Explainingworld","Explainedfact","Unstoppable","Explainingnews","This.our.planet","BeyondStartup.s","Media","Markets","ai.theshift","arising.ai","Scienceexplored","hollyfield.ia","theaintelligence","Theartificialintelligence","ai.extractions","Deepvaultai","LawofTech","Dominatingtech","Evolving.qc","quantumfield.ai","GrowthForgeAi","mindgoals.ai","techstartup.ai","Aiemerges"],"extra":["InfuseWithAi","DeepNewsAi","Unfoldedai","Timetolearn.ai","Iagptc","Futuretechnews.ai","AIWealthSociety","Uncoveringaitech","inventos","ia.hub","Lazona.Biz","Finanspace_","ArtificialIntelligenceFacts","Tricksforai","Whtelist","Deepen.ai","Stics.ai","AiCouncillor","TechCouncillor","Alpacka.ai","Askgpts","Blunerds","Brun0GPT","Codehub_tech","Coders_Section","Coding_Cosmos","Datasciencebrain","Futurewalt.ai","Futuremint.ai","Geekydev.in","Gen3rative","pycode.hubb","Python.coder_","Python.science","Sanskaar.ai","stics.bot","stics.ia","stics.qc","Thesanskaarsingh","Yajurved.ai","Techin24hours","CatAiPortal","Learnaifaster","Furiouslytech","Techniiverse","Explainscience.ai","Alphabiz.ai","Centerofai","Whereyoulearnai","Business.ai","Explainedlearn","Physicsuncovered","SpaceInANutShell","Howeverythingworks","Explainingworld","Explainedfact","Unstoppable","Explainingnews","This.our.planet","Markets","ai.theshift","arising.ai","Scienceexplored","hollyfield.ia","theaintelligence","Evolving.qc","quantumfield.ai","GrowthForgeAi","mindgoals.ai","techstartup.ai","Aiemerges"],"prevTitle":"Impact Pack","alacarte":99670,"price":74900,"discount":25,"reach":76582700}]};
+const fmtN = n => n>=1e6 ? (n/1e6).toFixed(n>=1e7?0:1)+'M' : Math.round(n/1e3)+'K';
+const fmt$ = n => '$'+n.toLocaleString('en-US',{maximumFractionDigits:2});
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pages = DATA.pages;
+const tot = pages.reduce((a,p)=>a+p.f,0);
+document.getElementById('stats').innerHTML = [
+  [pages.length,'Instagram pages'],[fmtN(tot),'combined followers'],[pages.filter(p=>p.f>=1e6).length,'pages over 1M'],['25-44','main age group']
+].map(([v,l])=>`<div class="stat"><span class="v num">${v}</span><span class="l">${l}</span></div>`).join('');
+
+const cpm = p => p.price/(p.reach/1000);
+document.getElementById('packs').innerHTML = DATA.packs.map(p=>{
+  const tag = `<span class="tag best">−${p.discount}%</span>`;
+  return `<article class="pack ${p.key==='impact'?'full':''}">
+    <div class="ptop"><h3>${esc(p.title)}</h3>${tag}</div>
+    <p class="pdesc">${esc(p.desc)}</p>
+    <div class="pricebox"><div class="price num">${fmt$(p.price)}<small>all taxes included</small></div><span class="was num">${fmt$(p.alacarte)} à la carte · you save ${fmt$(p.alacarte-p.price)}</span></div>
+    <dl class="kv"><div><dt>Pages</dt><dd class="num">${p.pages.length}</dd></div><div><dt>Followers reached</dt><dd class="num">${fmtN(p.reach)}</dd></div><div><dt>Per 1,000 followers</dt><dd class="num">${'$'+cpm(p).toFixed(2)}</dd></div></dl>
+    <details><summary>See included pages</summary>${p.prevTitle?`<p class="incl">Everything in the ${esc(p.prevTitle)}, plus:</p>`:''}<div class="plist">${p.extra.map(n=>`<span>@${esc(n)}</span>`).join('')}</div></details>
+  </article>`}).join('');
+
+let sortK='f', dir=-1;
+const q=document.getElementById('q'), zone=document.getElementById('zone'), size=document.getElementById('size');
+function render(){
+  const s=q.value.trim().toLowerCase(), z=zone.value, sz=size.value;
+  const bands={'1000000':[1e6,Infinity],'300000':[3e5,1e6],'100000':[1e5,3e5],'0':[0,1e5]};
+  let r=pages.filter(p=>(!s||p.n.toLowerCase().includes(s))&&(!z||p.z===z)&&(!sz||(p.f>=bands[sz][0]&&p.f<bands[sz][1])));
+  r.sort((a,b)=>{const x=a[sortK],y=b[sortK];return (typeof x==='string'?x.localeCompare(y):x-y)*dir});
+  document.getElementById('count').textContent = r.length+' page'+(r.length>1?'s':'');
+  document.getElementById('rows').innerHTML = r.map(p=>{
+    const alt = p.alt.length ? `<span class="sub">${p.fmt||'Reel'} ${fmt$(p.p)} · ${p.alt.map(a=>a.fmt+' '+fmt$(a.price)).join(' · ')}</span>` : '';
+    return `<tr>
+    <td><span class="nm">@${esc(p.n)}</span>${alt}</td>
+    <td class="r mono">${fmtN(p.f)}</td>
+    <td>${p.c?esc(p.c):'<span class="sub">Stats on request</span>'} <span class="zone">${p.z}</span></td>
+    <td class="mono">${p.g||'–'}</td>
+    <td class="mono">${esc(p.a)||'–'}</td>
+    <td class="r mono">${fmt$(p.p)}</td>
+    <td class="r mono">${p.p10<p.p?`<span class="vol">${fmt$(p.p10)}</span>`:'–'}</td>
+    <td>${p.d==='Permanent'?'Permanent':`<span class="dur">${p.d}</span>`}</td></tr>`}).join('');
+}
+document.querySelectorAll('th button').forEach(b=>b.addEventListener('click',()=>{
+  const k=b.dataset.k; dir = sortK===k ? -dir : (k==='n'?1:-1); sortK=k;
+  document.querySelectorAll('th button').forEach(x=>x.removeAttribute('aria-sort'));
+  b.setAttribute('aria-sort',dir>0?'ascending':'descending'); render();
+}));
+document.querySelectorAll('th button:not([aria-sort])').forEach(b=>b.setAttribute('aria-sort','none'));
+[q,zone,size].forEach(el=>el.addEventListener('input',render));
+render();
+</script>
+
+</body>
+</html>
